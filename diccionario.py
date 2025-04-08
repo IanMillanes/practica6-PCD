@@ -2,7 +2,8 @@ cadena='El profe Raul es un buen profe'
 frecuencia = {} 
 
 def frecuenciaDePalabras(cadena):
-    palabras = cadena.lower().split() 
+    palabras = cadena.lower()
+    palabras = palabras.split()
     
     for palabra in palabras:
         if palabra in frecuencia:  # Si la palabra ya está en el diccionario
@@ -13,15 +14,15 @@ def frecuenciaDePalabras(cadena):
     return frecuencia
 
 def mayorFrecuencia(conteo): 
-    palabra_max = ''
-    frecuencia_max = 0
+    mayorPalabra = ''
+    frecuenciaMayor = 0
     
     for palabra, frecuencia in conteo.items():
-        if frecuencia > frecuencia_max:
-            palabra_max = palabra
-            frecuencia_max = frecuencia
+        if frecuencia > frecuenciaMayor:
+            mayorPalabra = palabra
+            frecuenciaMayor = frecuencia
     
-    return (palabra_max, frecuencia_max)
+    return (mayorPalabra, frecuenciaMayor)
 
 conteo = frecuenciaDePalabras(cadena)
 print('Frecuencia de cada palabra:',conteo)
